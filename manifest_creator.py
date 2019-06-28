@@ -41,7 +41,7 @@ for i in out:
 
         with open('manifest.csv', mode='a') as manifest:
                 manifest_writer = csv.writer(manifest, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-                manifest_writer.writerow([str(count), str(candid), filename+'sci_image', filename+'ref_image', filename+'diff_image', str(nightid), str(scorr_peak)])
+                manifest_writer.writerow([str(count+1), str(candid), filename+'sci_image', filename+'ref_image', filename+'diff_image', str(nightid), str(scorr_peak)])
 
         count= count+1
 
