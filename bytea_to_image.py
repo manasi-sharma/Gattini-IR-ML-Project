@@ -31,11 +31,14 @@ cursor
 query = 'select * from cutouts cut, candidates cand where cut.candid = cand.candid and nightid= 268;'
 cursor.execute(query)
 out = cursor.fetchall()
+print('number of observations: '+str(len(out)))
 
 
 count= 0 #counter
 
 for i in out:
+        print(count)
+    
         candid= out[count]['candid']
 
         #calling function to plot science image
@@ -51,5 +54,3 @@ for i in out:
         plot_cutout(out[count]['diff_image']).savefig('jpeg_images/'+filename+'.jpg')
 
         count= count+1
-
-print(count)
